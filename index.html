@@ -1,0 +1,331 @@
+<html>
+<head>
+<style>
+    body{
+        background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/bc86ac75296439.5c48aa8646a3d.png);
+        background-size: cover;
+        background-attachment: local;
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 8vh;
+        background-color: rgba(0, 0, 0, 0.123);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        
+        z-index: 3;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+    }
+    nav:hover {
+        background-color: rgba(0, 0, 0, 0.473);
+
+    }
+    .h1{
+        display: flex;
+    }
+    .h1 a{
+        color: white;
+        text-decoration: none;
+    }
+    #edm{
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 30px;
+        padding: 5px;
+    }
+    #tit{
+        
+        color: white;
+        letter-spacing: 5px;
+        font-size: 20px;
+        padding: 5px;
+        padding-top: 23px;
+    }
+    .barre{
+        display: flex;
+        justify-content: space-around;
+        border-color: white;
+        list-style-type: none;
+    }
+    .barre li{
+        padding: 5px;
+        margin: 5px;
+        
+        text-transform: uppercase;
+    }
+    .barre a{
+        color: white;
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-size: 16px;
+    }
+    .menu{
+        display:none;
+        cursor: pointer;
+    }
+    .menu div{
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px;
+    }
+
+    @media screen and (max-width:900px){
+        nav{
+            position: relative;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        .barre{
+            position: absolute;
+            top:-675%;
+            height: 92vh;
+            z-index: 4;
+            background-color: #000000e1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            transform: translateY(0%);
+            transition: transform 0.5s ease-in;
+        }
+        .barre li{
+            opacity: 0;
+        }
+        .menu{
+            display:block;
+        }
+    }
+    .nav-active{
+        transform: translateY(125%);
+    }
+    @keyframes navFade{
+        from{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0px)
+        }
+    }
+
+    footer{
+        color: white;
+        background-color: rgba(0, 0, 0, 0.493);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+        padding: 5px;
+        bottom: 0px;
+        left: 10px;
+        right: 10px;
+    }
+    #resumenu a{
+        color: white;
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-size: 16px;
+
+    }
+    #resumenu ul{
+        padding: 0px 0px 0px 0px;
+    }
+    #resumenu li{
+        list-style-type: none;
+        justify-content: right;
+        padding-bottom: 30px;
+    }
+    #resumenu{
+        justify-content: space-around;
+        display: flex;
+    }
+    #signe{
+        justify-content: center;
+        height: 100px;
+        filter : invert(1);
+    }
+    h2, h3, h4{
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: normal;
+    }
+    #news1{
+        margin-left: 60%;
+        margin-top: 100px;
+        position: relative;
+        text-align: justify;
+        width: 350px;
+        line-height: 40px;
+        margin-bottom: 100px;
+        color: rgb(2, 2, 122);
+    }
+    #inside1{
+        position: absolute;
+        top: 8%;
+        left: 20%;
+
+    }
+    #news2{
+        margin-left: 180px;
+        position: relative;
+        text-align: justify;
+        width: 400px;
+        line-height: 50px;
+        color: #f2f2f2;
+        margin-bottom: 100px;
+    }
+    #inside2{
+        position: absolute;
+        top: 10%;
+        left: 15%;
+    }
+    #news3{
+        position: relative;
+        text-align: center;
+        width: 200px;
+        margin: auto;
+        
+        font-size: 200px;
+        
+    }
+    #inside3{
+        position: absolute;
+        top: -48%;
+        left: 20%;    
+        padding: 0px;
+        height: 300px;
+    }
+    #inside3 a{
+        text-decoration: none;
+        color: #f2f2f2;
+    }
+    #inside3 a:hover{
+        color: firebrick;
+        text-shadow: firebrick 1px 0 10px;;
+        cursor: pointer;
+
+    }
+    @media screen and (max-width:900px){
+        body{
+            overflow-x: hidden;
+        }
+        #news1, #news2, #news3{
+            margin: auto;
+            margin-top: 100px;
+        }
+    }
+
+    #reseau:hover{
+        
+        cursor: pointer;
+filter: ;
+    }
+        
+</style>
+<title>EDM site</title>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="h1">
+            <p id="tit"><a href="index.html">the </p><p id="edm">EDM</p> <p id="tit">website</a></p>
+        </div>
+        
+        <ul class="barre">
+            <li><a href="auteur.html">L'auteur</a></li>
+            <li><a href="Oeuvres.html">Œuvres </a></li>
+            <li><a href="Projets.html">Projets</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="News.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu">
+            <div class="top"></div>
+            <div class="middle"></div>
+            <div class="bottom"></div>
+        </div>
+    </nav>
+</header>
+
+<div class="corps">
+    <div id="news1">
+        <img src="paper1.png" width="430px">
+        <div id="inside1"> 
+            <h2>Entrée dans le monde de la littérature</h2>
+            <p font size='14px' >“1111Pater noster, qui es in caelis sanctificetur nomen tuum adveniat regnum tuum fiat voluntas tua sicut in caelo et in terra. 
+                Panem era nos a malo. Amen.”
+            </p>
+        </div>
+    </div>
+    <div id="news2">
+        <img src="tab.png" width="500px" height="400px">
+        <div id="inside2">
+            <h3>AN 3 APRES COVID</h3>
+            <p>“2222Pater noster, qui es in caelis sanctificetur nomen tuum adveniat regnum tuum inducas in tentationem sed libera nos a malo. Amen.”
+            </p>
+        </div>
+    </div>
+    <br><br><br>
+    <div id="news3">
+        <img src="tab2.png" width="200">
+        <div id="inside3">
+            <p><a href="Projets.html"> Φ </a></p>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+<footer> 
+    <p>
+    <a href="https://www.facebook.com"><img id='reseau' src="fb.png" height="40px" width="40px"></a>
+    <a href="https://www.instagram.com"><img id='reseau' src="insta.png"height="40px" width="40px"></a>
+    </p>
+    <div id="resumenu">
+        <ul>
+            <li><a href="auteur.html">L'auteur</a></li>
+            <li><a href="Oeuvres.html">Oeuvres </a></li>
+            <li><a href="Projets.html">Projets</a></li>
+        </ul>
+        <br><br>
+        <ul>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="News.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <img id="signe" src="signature.png">
+</footer>
+
+<script>
+    const navSlide = () =>{
+        const menu = document.querySelector('.menu');
+        const nav = document.querySelector('.barre');
+        const laBarre = document.querySelectorAll('.barre li');
+
+        menu.addEventListener('click', () => {
+            
+            nav.classList.toggle('nav-active');
+
+            laBarre.forEach((link,index)=>{
+                if(link.style.animation){
+                    link.style.animation = '';
+                }
+                else{
+                    link.style.animation = `navFade 0.5s ease forwards ${index/7}s`;
+                }
+            });
+        });
+    }
+    navSlide();
+</script>
+</body>
+</html>
